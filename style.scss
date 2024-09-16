@@ -1,0 +1,272 @@
+$eskom-blue: #003896;
+$black: #000;
+$white: #fff;
+$background: #D9D9D9;
+$dark-background: #525252;
+$eskom-gold: #968969;
+$eskom-text-color: #525252;
+$eskom-dark-text-color: #1E1E1E;
+$eskom-link: #525252;
+$radius-large: 12px;
+$radius-small: 0px;
+$send-height: 72px;
+$container-width: 1140px;
+
+$notice-greeting-height: 40px;
+$greeting-text-size: 18px;
+$notice-text-size: 14px;
+
+
+$total-top-bar-size: $greeting-text-size + $notice-greeting-height + 2*$notice-text-size;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.AlfredHelm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+
+  &-instruction {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: inline;
+      font-weight: 400;
+    }
+  }
+
+  &-chatcontainer {
+    flex-grow: 1;
+    
+    @media screen and (min-width: 768px) {
+      max-height: calc(100% - #{$total-top-bar-size});
+    }
+  }
+
+
+  background-color: $background;
+
+  &-greeting {
+    font-size: $greeting-text-size;
+    padding: 0 0px 0 10px;
+    background-color: $eskom-gold;
+    color: #FFF;
+    line-height: 1;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      padding: 0 0px 0 40px;
+    }
+  }
+  
+  &-logo {
+    height: 40px;
+  }
+
+  &-privacy-notice {
+    padding: 10px;
+    width: 100%;
+    background-color: $background;
+    a {
+      font-size: $notice-text-size;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      color: $eskom-link;
+      border: none;
+      line-height: 1;
+
+      &:hover {
+        color: $eskom-blue;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 20px 40px;
+    }
+  }
+
+  @media screen and (min-width: $container-width) {
+    background-color: $dark-background;
+
+    &-privacy-notice, &-greeting, &-chatContainer {
+      width: $container-width;
+    }
+    
+  }
+  
+}
+
+.ChatContainer {
+  background-color: $background;
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    border: none;
+  }
+
+  &-content {
+    height: calc(100% - #{$send-height});
+
+    @media screen and (min-width: 768px) {
+      padding: 0 40px 0 40px;
+      flex-grow: 0;
+    }
+
+  }
+
+  &-input {
+    height: $send-height;
+  }
+  
+  .Text {
+    font-family: "Roboto", sans-serif;
+    color: $eskom-text-color;
+    border-radius: $radius-large $radius-large $radius-small $radius-small;
+    font-size: 20px;
+    margin-bottom: 10px;
+
+    & > div {
+      margin-bottom: 0;
+    }
+
+    &:only-child {
+      border-top-left-radius: $radius-large;
+      border-top-right-radius: $radius-large;
+    }
+    
+    &:last-of-type {
+      border-bottom-left-radius: $radius-large;
+      border-bottom-right-radius: $radius-large;
+    }
+    
+    &:first-of-type {
+      border-top-left-radius: $radius-large;
+    }
+
+    &.is-local {
+      background-color: $eskom-blue;
+      color: white;
+      font-weight: 800;
+
+      &:only-child {
+        border-bottom-right-radius: $radius-small;
+        border-top-right-radius: $radius-large;
+      }
+
+      &:first-child {
+        border-bottom-right-radius: $radius-small;
+        border-bottom-left-radius: $radius-large;
+      }
+
+      :last-child {
+        border-top-right-radius: $radius-small;
+      }
+    }
+  }
+
+  .MessageContainer {
+    margin-top: 0;
+  }
+
+  .MessagesList {
+    padding-left: 0;
+
+    &-item {
+      display: flex;
+      padding-left: 45px;
+      position: relative;
+    }
+
+    .is-local {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-top: 40px;
+    }
+  }
+
+  .AvatarStatus {
+    position: absolute;
+    left: 0;
+  }
+
+  .ButtonContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .Button {
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: $eskom-blue;
+    border-radius: 0;
+    border: 0;
+    font-size: 20px;
+    background-color: $white;
+    text-align: left;
+    padding: 10px 20px;
+    margin-left: 0;
+  }
+
+  .Text {
+    font-family: "Roboto", sans-serif;
+  }
+
+  .ChatContainer .Text:last-of-type {
+    background-color: transparent;
+  }
+
+  .Input {
+    background-color: $background;
+    padding: 0 14px 14px 0;
+
+    
+    &-input {
+      background-color: $white;
+      font-size: 20px;
+      color: $eskom-dark-text-color;
+      font-weight: 500;
+      margin-right: -20px;
+      padding-right: 20px;
+    }
+
+    &-send {
+      background-color: $eskom-gold;
+      font-size: 20px;
+      color: $white;
+      padding: 0 30px;
+      font-weight: 600;
+      border-radius: 100px;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: darken($eskom-gold, 10%);
+      }
+    }
+  }
+}

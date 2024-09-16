@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script crossorigin src="https://unpkg.com/react/umd/react.production.min.js" ></script>
+    <script crossorigin src="https://unpkg.com/react-dom/umd/react-dom.production.min.js" ></script>
+    <script src="https://unpkg.com/@prk/react-web-chat/umd/@prk/react-web-chat.min.js" ></script>
+    <link rel="stylesheet" href="https://unpkg.com/react-web-chat/umd/main.css" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <!-- <img class="AlfredHelm-logo" src="./Eskom_Logo_RHS.png"/> -->
+    <style type="text/css"></style>
+    <div class="AlfredHelm">
+      <div class="AlfredHelm-privacy-notice">
+        <a target="blank" href="https://www.eskom.co.za/wp-content/uploads/2023/01/Eskom_External_Privacy_Statement_25012023.pdf">Privacy Notice</a>
+      </div>
+      <div class="AlfredHelm-greeting">
+        <span>Hello, I'm Alfred! <span class="AlfredHelm-instruction">I can help you with your electricity issues.</span></span>
+        <img class="AlfredHelm-logo" src="./Eskom_Logo_RHS.png"/>
+
+        
+      </div>
+      <div class="AlfredHelm-chatcontainer" id="my-chat-element"></div>
+    </div>
+
+    
+    <script>
+      var myChatElement = document.getElementById("my-chat-element");
+      var reactWebChat = new ReactWebChat({
+        url: "https://engine.eskom.qa.helm.africa/chat_sockjs",
+        element: myChatElement,
+        avatar: "./avatar.png",
+        network: {
+          channel_id: "66c79d24-e6ff-4e4b-aec7-391b11f588cd"
+        }
+      });
+      var sendButton = document.getElementsByClassName("Input-send")[0];
+      sendButton.innerHTML = 'Send';
+    </script>
+  </body>
+</html>
