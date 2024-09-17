@@ -5,14 +5,15 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
+  box-sizing: border-box;
 }
 
 .AlfredHelm {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
   background-color: #D9D9D9;
+  height: 100%;
 }
 .AlfredHelm-instruction {
   display: none;
@@ -25,10 +26,11 @@ body {
 }
 .AlfredHelm-chatcontainer {
   flex-grow: 1;
+  height: calc(100% - 70px);
 }
 @media screen and (min-width: 768px) {
   .AlfredHelm-chatcontainer {
-    max-height: calc(100% - 86px);
+    height: calc(100% - 86px);
   }
 }
 .AlfredHelm-greeting {
@@ -86,9 +88,8 @@ body {
 
 .ChatContainer {
   background-color: #D9D9D9;
-}
-.ChatContainer ul {
-  list-style: none;
+  height: 100% ul;
+  height-list-style: none;
 }
 .ChatContainer a {
   border: none;
@@ -98,6 +99,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .ChatContainer-content {
+    height: calc(100% - 72px);
     padding: 0 40px 0 40px;
     flex-grow: 0;
   }
