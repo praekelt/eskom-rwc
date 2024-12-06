@@ -8,6 +8,10 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  color: #fff;
+}
+
 .AlfredHelm {
   display: flex;
   flex-direction: column;
