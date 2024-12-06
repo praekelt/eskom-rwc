@@ -30,10 +30,6 @@ body {
   box-sizing:border-box;
 }
 
-a {
-    color: #fff;
-}
-
 .AlfredHelm {
   display: flex;
   flex-direction: column;
@@ -205,6 +201,9 @@ a {
     .is-local {
       display: flex;
       flex-direction: row-reverse;
+      a {
+        color: #fff;
+      }
     }
 
     @media screen and (min-width: 768px) {
