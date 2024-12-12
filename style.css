@@ -147,6 +147,14 @@ body {
 .ChatContainer .MessageContainer {
   margin-top: 0;
 }
+.ChatContainer .MessageContainer .Image {
+  height: auto;
+}
+.ChatContainer .MessageContainer .Image-image {
+  height: auto;
+  width: auto;
+  max-width: 90vw;
+}
 .ChatContainer .MessagesList {
   padding-left: 0;
 }
@@ -196,6 +204,10 @@ body {
 }
 .ChatContainer .ChatContainer .Text:last-of-type {
   background-color: transparent;
+}
+.ChatContainer .ChatContainer .Text {
+  width: 100%;
+  width: -webkit-fill-available;
 }
 .ChatContainer .Input {
   background-color: #D9D9D9;
