@@ -10,7 +10,7 @@
 
     <script src="https://unpkg.com/@prk/react-web-chat/umd/@prk/react-web-chat.min.js" ></script>
     <link rel="stylesheet" href="https://unpkg.com/react-web-chat/umd/main.css" />
-    <link rel="stylesheet" href="https://storage.googleapis.com/io-europe-west1-eskom-bot-prd-media/static/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alfred, Eskom's chatbot</title>
   </head>
@@ -29,11 +29,11 @@
     <script>
       var myChatElement = document.getElementById("my-chat-element");
       var reactWebChat = new ReactWebChat({
-        url: "https://chat.qa.alfred-infra.co.za/chat_sockjs",
+        url: "https://chat.prd.alfred-infra.co.za/chat_sockjs",
         element: myChatElement,
         avatar: "./avatar.png",
         network: {
-          channel_id: "4b4fe17e-d0ad-4501-97b0-7119e0d2fa2e"
+          channel_id: "930da254-5752-4bf0-96c4-d16df38f3e19"
         }
       });
       var sendButton = document.getElementsByClassName("Input-send")[0];
