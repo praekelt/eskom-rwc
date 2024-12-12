@@ -49,6 +49,7 @@ body {
   &-chatcontainer {
     flex-grow: 1;
     height: calc(100% - 70px);
+    max-width: 100%;
     
     @media screen and (min-width: 768px) {
       height: calc(100% - #{$total-top-bar-size});
@@ -145,6 +146,17 @@ body {
     border-radius: $radius-large $radius-large $radius-small $radius-small;
     font-size: 20px;
     margin-bottom: 10px;
+
+    a {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     & > div {
       margin-bottom: 0;
@@ -258,10 +270,16 @@ body {
     background-color: transparent;
   }
 
-  .ChatContainer .Text {
+  .Text {
     width: 100%;
     width: -webkit-fill-available;
   }
+
+  .Text a {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
 
   .Input {
     background-color: $background;

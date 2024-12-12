@@ -27,6 +27,7 @@ body {
 .AlfredHelm-chatcontainer {
   flex-grow: 1;
   height: calc(100% - 70px);
+  max-width: 100%;
 }
 @media screen and (min-width: 768px) {
   .AlfredHelm-chatcontainer {
@@ -113,6 +114,16 @@ body {
   border-radius: 12px 12px 0px 0px;
   font-size: 20px;
   margin-bottom: 10px;
+}
+.ChatContainer .Text a {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .ChatContainer .Text > div {
   margin-bottom: 0;
@@ -205,9 +216,14 @@ body {
 .ChatContainer .ChatContainer .Text:last-of-type {
   background-color: transparent;
 }
-.ChatContainer .ChatContainer .Text {
+.ChatContainer .Text {
   width: 100%;
   width: -webkit-fill-available;
+}
+.ChatContainer .Text a {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .ChatContainer .Input {
   background-color: #D9D9D9;
