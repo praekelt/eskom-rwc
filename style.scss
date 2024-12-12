@@ -158,6 +158,13 @@ body {
       text-overflow: ellipsis;
     }
 
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      margin: 0;
+    }
+
     & > div {
       margin-bottom: 0;
     }

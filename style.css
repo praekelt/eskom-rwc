@@ -125,6 +125,12 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.ChatContainer .Text pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  margin: 0;
+}
 .ChatContainer .Text > div {
   margin-bottom: 0;
 }
