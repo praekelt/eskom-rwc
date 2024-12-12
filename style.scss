@@ -258,10 +258,16 @@ body {
     background-color: transparent;
   }
 
-  .ChatContainer .Text {
+  .Text {
     width: 100%;
     width: -webkit-fill-available;
   }
+
+  .Text a {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
 
   .Input {
     background-color: $background;
